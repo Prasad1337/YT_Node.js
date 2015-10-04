@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="bin\www" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="C:/Program Files/nodejs/node" path-to-js-file="bin/www" working-dir="$PROJECT_DIR$">
     <envs>
-      <env name="DEBUG" value="Nodejs:*" />
+      <env name="DEBUG" value="YT_Node.js:*" />
     </envs>
     <browser start="true" url="http://localhost:3000/" />
     <method />
