@@ -61,18 +61,27 @@ app.use(function(err, req, res, next) {
 
 var searchTerm="Astrix";
 
-search(searchTerm, opts, function(err, results) {
-  if(err) return console.log(err);
+function searchYT(term)
+{
+  var str;
+  search(term, opts, function(err, results) {
+    if(err) return console.log(err);
 
-  console.dir(results);
-  var str = JSON.stringify(results,null,4);
+    str = JSON.stringify(results,null,4);
 
-  fs.writeFile("./results.json", str, function(err) {
-    if(err) {
-      return console.log(err);
-    }
+    fs.writeFile("./results.json", str, function(err) {
+      if(err) {
+        return console.log(err);
+      }
+    });
   });
+}
+
+app.get('/test', function (req, res) {
+  res.send('test');
 });
+
+searchYT(searchTerm);
 
 app.locals.resultsData = require('./results.json');
 
