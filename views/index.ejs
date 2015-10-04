@@ -3,12 +3,21 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="../public/DDLhandler.js"></script>
   </head>
   <body>
     <h1><%= title %></h1>
-    <ul>
+    <select id="playDDL" name="playDDL" onchange="reportDDL(this.value)">
+      <option value="Astrix">Astrix</option>
+      <option value="Deadmau5">Deadmau5</option>
+      <option value="Tiesto">Tiesto</option>
+      <option value="Avicii">Avicii</option>
+      <option value="Markus Schulz">Markus Schulz</option>
+      <option value="Armin Van Buuren">Armin Van Buuren</option>
+    </select>
+    <ul id="playUL">
       <% resultsData.forEach(function(item){ %>
-        <li><a href="<%= item.link %>"><img src="<%= item.thumbnails.default.url %>"/></a></li>
+        <li><a href="<%= item.link %>" target="_blank"><img src="<%= item.thumbnails.default.url %>"/></a></li>
       <% }); %>
     </ul>
   </body>

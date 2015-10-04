@@ -57,13 +57,15 @@ app.use(function(err, req, res, next) {
     message: err.message,
     error: {}
   });
-});
+})
 
-search('cats', opts, function(err, results) {
+var searchTerm="Astrix";
+
+search(searchTerm, opts, function(err, results) {
   if(err) return console.log(err);
 
   console.dir(results);
-  var str = JSON.stringify(results);
+  var str = JSON.stringify(results,null,4);
 
   fs.writeFile("./results.json", str, function(err) {
     if(err) {
@@ -73,7 +75,5 @@ search('cats', opts, function(err, results) {
 });
 
 app.locals.resultsData = require('./results.json');
-
-
 
 module.exports = app;
