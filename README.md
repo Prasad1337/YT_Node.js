@@ -1,11 +1,11 @@
 # YT_Node.js
-Node.js application consisting of a single playlist module with YouTube’s public search API
+Node.js application consisting of a single playlist module with YouTube’s public search API.
 
 RUN INSTRUCTIONS:
-This application was intended to run using WebStorm <https://www.jetbrains.com/webstorm/> with Node.js already installed
+This application was intended to run using WebStorm <https://www.jetbrains.com/webstorm/> with Node.js already installed.
 
 DESIGN DECISIONS:
-I opted for Node.js express and EJS
+I opted for Node.js express and EJS.
 Using 'youtube-search' npm, a JSON object is fetched and then stored in a file. This file is essentially used as a global variable for accessing and displaying the data.
 
 NOTES:
