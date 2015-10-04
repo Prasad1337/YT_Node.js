@@ -6,6 +6,10 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    
+    <ul>
+      <% resultsData.forEach(function(item){ %>
+        <li><a href="<%= item.link %>"><img src="<%= item.thumbnails.default.url %>"/></a></li>
+      <% }); %>
+    </ul>
   </body>
 </html>
