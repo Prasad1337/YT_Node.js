@@ -4,9 +4,15 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var mongoose = require('mongoose');
-
 var routes = require('./routes/index');
+
+var search = require('youtube-search');
+var fs = require('fs');
+
+var opts = {
+  maxResults: 10,
+  key: 'AIzaSyCRkA8jZDGPdruUEagouxWPkbK6t5ULMNY'
+};
 
 var app = express();
 
@@ -52,6 +58,22 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+search('cats', opts, function(err, results) {
+  if(err) return console.log(err);
+
+  console.dir(results);
+  var str = JSON.stringify(results);
+
+  fs.writeFile("./results.json", str, function(err) {
+    if(err) {
+      return console.log(err);
+    }
+  });
+});
+
+app.locals.resultsData = require('./results.json');
+
 
 
 module.exports = app;
