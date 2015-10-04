@@ -77,8 +77,8 @@ function searchYT(term)
   });
 }
 
-app.get('/test', function (req, res) {
-  res.send('test');
+app.get('/getYT', function (req, res) {
+  res.json(searchYT(res.valDDl));
 });
 
 searchYT(searchTerm);

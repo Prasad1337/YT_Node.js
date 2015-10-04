@@ -3,21 +3,8 @@
       <head>
         <title><%= title %></title>
         <link rel='stylesheet' href='/stylesheets/style.css' />
-        <script type="text/javascript">
-          function reportDDL(val)
-          {
-            var xmlHttp = new XMLHttpRequest();
-            xmlHttp.onreadystatechange = function() {
-              if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-                callback(xmlHttp.responseText);
-            }
-            xmlHttp.open("GET","/test",true);
-            xmlHttp.send(val);
-            window.alert(xmlHttp.responseText);
-          }
-
-        </script>
       </head>
+
       <body>
         <h1><%= title %></h1>
         <br/><br/>
@@ -37,5 +24,18 @@
           <% }); %>
         </ul>
         </center>
+
+        <script type="text/javascript">
+          function reportDDL(val) {
+            $.ajax({
+              url: '/getYT',
+              type: 'GET',
+              data: {valDDL: val},
+              success: function (data) {
+                //alert('Success!')
+              }
+            });
+          }
+        </script>
       </body>
 </html>
