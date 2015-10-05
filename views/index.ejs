@@ -3,7 +3,7 @@
       <head>
         <title><%= title %></title>
         <link rel='stylesheet' href='/stylesheets/style.css' />
-        <script src="../public/javascripts/jquery-2.1.4.js"></script>
+        <script src="../javascripts/jquery-2.1.4.min.js"></script>
       </head>
 
       <body>
@@ -30,14 +30,20 @@
         <script type="text/javascript">
           function reportDDL(val) {
             $.ajax({
-              url: '/getYT',
+              url: '/',
               type: 'GET',
               data: {valDDL: val},
               success: function (data) {
-                window.alert('Success!')
+                $.getJSON("../results.json", function( data ) {
+                }
+                var items = [];
+                $.each( data, function( key, val ) {
+                  //
+                });
               }
             });
           }
+
         </script>
       </body>
 </html>

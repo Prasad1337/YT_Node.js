@@ -59,7 +59,7 @@ app.use(function(err, req, res, next) {
   });
 })
 
-var searchTerm="Astrix";
+var searchTerm="Avicii";
 
 function searchYT(term)
   {
@@ -77,7 +77,7 @@ function searchYT(term)
   });
 }
 
-app.get('/getYT', function (req, res) {
+app.get('/', function (req, res) {
   res.json(searchYT(res.valDDl));
 });
 
