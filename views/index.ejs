@@ -3,6 +3,7 @@
       <head>
         <title><%= title %></title>
         <link rel='stylesheet' href='/stylesheets/style.css' />
+        <script src="../public/javascripts/jquery-2.1.4.js"></script>
       </head>
 
       <body>
@@ -20,7 +21,8 @@
           <br/><br/>
         <ul id="playUL">
           <% resultsData.forEach(function(item){ %>
-            <li><a href="<%= item.link %>" target="_blank"><img src="<%= item.thumbnails.default.url %>"/></a></li>
+            <li><h1><small><%= item.title %></small></h1><a href="<%= item.link %>" target="_blank"><img src="<%= item.thumbnails.high.url %>"/></a></li>
+          <br/>
           <% }); %>
         </ul>
         </center>
@@ -32,7 +34,7 @@
               type: 'GET',
               data: {valDDL: val},
               success: function (data) {
-                //alert('Success!')
+                window.alert('Success!')
               }
             });
           }

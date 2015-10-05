@@ -62,7 +62,7 @@ app.use(function(err, req, res, next) {
 var searchTerm="Astrix";
 
 function searchYT(term)
-{
+  {
   var str;
   search(term, opts, function(err, results) {
     if(err) return console.log(err);
